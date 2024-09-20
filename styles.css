@@ -1,0 +1,120 @@
+/* CSS Reset을 사용하려면 아래와 같이 추가 가능합니다.
+@import url('https://necolas.github.io/normalize.css/8.0.1/normalize.css');
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Pretendard', sans-serif;
+    background-color: #ffffff; /* 필요에 따라 변경 */
+    color: #000000;
+}
+
+.hero {
+    width: 100%;
+    text-align: center;
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+}
+
+.hero-image {
+    width: 100%;
+    height: auto;
+}
+
+.animated-image {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%; /* 크기 조정 */
+    height: auto; /* 비율 유지 */
+    opacity: 0; /* 시작 시 보이지 않음 */
+    will-change: opacity, transform;
+    animation: fadeInMove 2s forwards; /* 애니메이션 적용 */
+}
+
+@keyframes fadeInMove {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, 20px); /* 아래에서 시작 */
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, 0); /* 원래 위치로 이동 */
+    }
+}
+
+.section {
+    width: 100%;
+    padding: 1.5rem;
+    margin: 1rem 0;
+    background-color: white;
+    text-align: center;
+}
+
+.form input {
+    width: 100%;
+    padding: 0.8rem;
+    margin: 0.5rem 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.form button {
+    padding: 0.8rem;
+    width: 100%;
+    background-color: #d50513;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form input:focus,
+.form button:focus {
+    outline: 2px solid #d50513;
+}
+
+.footer {
+    margin-top: auto;
+    padding: 1rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.hero-title,
+.hero-description,
+.hero-text {
+    text-align: left; /* 좌측 정렬 */
+    margin-left: 1rem; /* 왼쪽 여백 추가 */
+    font-family: 'Pretendard', sans-serif; /* 폰트 설정 */
+    letter-spacing: -0.5px; /* 자간 줄이기 */
+    line-height: normal; /* 기본 줄 간격으로 설정 */
+    transform: scaleX(0.95); /* 가로 길이 압축 (90%로 수축) */
+    transform-origin: left; /* 기준점을 왼쪽으로 설정 */
+    margin-bottom: 0.5rem; /* 아래 간격 추가 */
+}
+
+.hero-title {
+    color: #000; /* 타이틀 글씨 색상을 검은색으로 설정 */
+    font-weight: 900; /* Pretendard Black 스타일 */
+}
+
+.hero-description {
+    color: rgba(0, 0, 0, 0.6); /* 흐린 색으로 설정 (검은색의 60% 불투명도) */
+    font-weight: 400; /* 텍스트 굵기 설정 (얇게) */
+}
+
+.hero-text {
+    color: #000; /* 작은문자 색상을 검은색으로 설정 */
+}
